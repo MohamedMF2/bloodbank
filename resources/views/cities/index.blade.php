@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_title', $governorate ->name .' Governorate / Cities ')
+@section('page_title', __('lang.cities') .' '.$governorate ->name )
                  
 @section('content')     
   <!-- Main content -->
@@ -9,9 +9,10 @@
     <!-- Default box -->
     <div class="box">
         <div class="box-header with-border">
-        <a href="{{url(route('governorate.city.create',$governorate_id))}}"> <button class="btn btn-primary"><i class="fa fa-plus"></i> @lang('lang.City Name')</button></a>
+        <a class="btn btn-primary" href="{{url(route('governorate.city.create',$governorate_id))}}"> 
+          <i class="fa fa-plus"></i> @lang('lang.add city')
+        </a>
 
-            <h3 class="box-title">  </h3>
                 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -39,13 +40,13 @@
                          <td> {{ $loop->iteration}} </td>
                          <td  class="text-center">  {{ $city->name }} </td>
                          <td  class="text-center"> 
-                           <a href="{{ url(route('governorate.city.edit',[$city->governorate_id, $city->id] )) }}" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> </a>
+                           <a href="{{ url(route('governorate.city.edit',[$city->governorate_id, $city->id] )) }}" class="btn btn-lg btn-success"><i class="fa fa-edit"></i> </a>
                          </td>
                          <td  class="text-center">
                             <form action="{{action('GovernorateCityController@destroy',[$city->governorate_id, $city->id])}}" method="post">
                               @method('DELETE')
                               @csrf
-                              <button type="submit" class="btn btn-sm btn-danger"><i class=" fa fa-trash-o"></i></button>
+                              <button type="submit" class="btn btn-lg btn-danger"><i class=" fa fa-trash-o"></i></button>
                             </form>
                           </td>
 

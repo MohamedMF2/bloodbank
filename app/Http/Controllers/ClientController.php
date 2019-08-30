@@ -85,7 +85,22 @@ class ClientController extends Controller
         flash()->success('Client Deleted Successfully');
         return back();
     }
-
+    public function activate($id)
+    {
+        $client = Client::findOrFail($id);
+        $client->activated = 1;
+        $client->save();
+        flash()->success('تم التفعيل');
+        return redirect(route('client.index'));
+    }
+    public function deActivate($id)
+    {
+        $client = Client::findOrFail($id);
+        $client->activated = 0;
+        $client->save();
+        flash()->success('تم الإيقاف');
+        return redirect(route('client.index'));
+    }
 
    /* public function search (Request $request){
         $request ->validate([

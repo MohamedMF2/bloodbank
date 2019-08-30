@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('page_title', $category->name .'\'s Posts')
+@section('page_title', $category->name )
                  
 @section('content')     
   <!-- Main content -->
@@ -30,10 +30,10 @@
 
                   <tr>
                       <th>#</th>
-                    <th  class="text-center"> Post Title</th>
-                    <th  class="text-center"> Post Content</th>
-                    <th  class="text-center">Edit</th>
-                    <th  class="text-center">Delete</th>
+                    <th  class="text-center">  @lang('lang.title')</th>
+                    <th  class="text-center">@lang('lang.content') </th>
+                    <th  class="text-center">@lang('lang.edit')</th>
+                    <th  class="text-center">@lang('lang.delete')</th>
 
                   </tr>
                     @foreach ($posts as $post)
@@ -43,13 +43,13 @@
                          <td  class="text-center"> {{ $post->title}}  </td>
                          <td  class="text-center"> {{ str_limit( $post->content,60)}}  </td>
                          <td  class="text-center"> 
-                            <a href="{{ url(route('post.edit',$post->id)) }}" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> </a>
+                            <a href="{{ url(route('post.edit',$post->id)) }}" class="btn btn-lg btn-success"><i class="fa fa-edit"></i> </a>
                          </td>
                          <td  class="text-center">
                             <form action="{{action('CategoryController@destroy',$category->id)}}" method="post">
                               @method('DELETE')
                               @csrf
-                              <button type="submit" class="btn btn-sm btn-danger"><i class=" fa fa-trash-o"></i></button>
+                              <button type="submit" class="btn btn-lg btn-danger"><i class=" fa fa-trash-o"></i></button>
                             </form>
                           </td>
 
@@ -61,7 +61,7 @@
 
             @else
                 <div class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">nodata</h4>
+                    <h4 class="alert-heading">@lang('lang.nodata')</h4>
                 </div>
             @endif
         </div>

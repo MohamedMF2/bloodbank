@@ -99,7 +99,7 @@
                   @csrf
                 <button type="submit" class="btn  btn-lg btn-primary "> {{__('lang.logout')}}</button>
                 </div>
-          
+              </form>
          
         </ul>
       </div>
@@ -138,8 +138,8 @@
 
         <li><a href="{{url(route('client.index'))}}"><i class="fa fa-users"></i> <span>{{__('lang.clients')}}  </span></a></li>
         <li><a href="{{url(route('contact.index'))}}"><i class="fa fa-address-card"></i><span>{{__('lang.contacts')}}</span></a></li>
+        <li><a href="{{url(route('donation.index'))}}"><i class="fa fa-address-card"></i><span>{{__('lang.donation requests')}}</span></a></li>
 
-        <li><a href="{{url(route('donation.index'))}}"><i class="fa fa-address-card"><span>{{__('lang.donation requests')}}</i></span></a></li>
 
         <li><a href="{{url(route('setting.edit'))}}"><i class="fa fa-book"></i> <span>{{__('lang.setting')}}</span></a></li>
         @role('admin')

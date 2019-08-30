@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('page_title',' edit city')
+@section('page_title', __('lang.edit') .' '.$city->name)
                  
 @section('content')     
   <!-- Main content -->
@@ -8,7 +8,6 @@
     <!-- Default box -->
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Edit {{$city->name}}</h3>
 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -26,14 +25,14 @@
           <form action="{{ action('GovernorateCityController@update',[$city->governorate_id, $city->id]) }}" method="post" autocomplete="off">        
             @method('PUT')
               <div class="form-group">
-                <label for="my-input">Name</label>
+                <label for="my-input">@lang('lang.name')</label>
               <input id="my-input" class="form-control" type="text" name="name" value="{{$city->name}}">
                 <span class=" text-danger"> {{ $errors->first('name') }}</span>
 
               </div>
                                    
 
-              <button type="submit" class="btn btn-primary" > Save </button>
+              <button type="submit" class="btn btn-success " > @lang('lang.save' )</button>
 
             @csrf
           </form>

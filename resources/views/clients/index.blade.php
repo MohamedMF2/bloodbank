@@ -57,9 +57,12 @@
                         
                          <td  class="text-center"> {{ $client->activated ?"Active":"Deactivated"}} </td>
 
-                         <td class="text-center"> 
-                            <a href="{{ url(route('client.edit',$client->id)) }}" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> </a>
-
+                         <td class="text-center">
+                            @if($client->activated)
+                         <a href="{{url(route('client.deActive',$client->id))}}" class="btn btn-xs btn-danger"><i class="fa fa-close"></i> إيقاف</a>
+                            @else
+                                <a href="{{url(route('client.active',$client->id))}}" class="btn btn-xs btn-success"><i class="fa fa-check"></i> تفعيل</a>
+                            @endif
                          </td>
                          <td  class="text-center">
                             <form action="{{action('ClientController@destroy',$client->id)}}" method="post">

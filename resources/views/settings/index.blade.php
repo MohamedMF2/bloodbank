@@ -87,7 +87,7 @@
 
             @else
                 <div class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">nodata</h4>
+                    <h4 class="alert-heading">@lang('lang.no data')</h4>
                 </div>
             @endif
         </div>

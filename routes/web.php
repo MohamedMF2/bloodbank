@@ -29,6 +29,9 @@ Route::group(
             Route::resource('governorate','GovernorateController');
             Route::resource('category','CategoryController');
             Route::resource('governorate.city','GovernorateCityController');
+            Route::get('/client/{client}/de-activate','ClientController@deActivate')->name('client.deActive');
+            Route::get('/client/{client}/activate','ClientController@activate')->name('client.active');
+
             Route::resource('client','ClientController');
             Route::resource('post','PostController');
             Route::resource('donation','DonationController');
@@ -41,7 +44,7 @@ Route::group(
             Route::post('setting','SettingController@store')->name('setting.store');
             Route::get('admin','AdminController@edit')->name('admin.edit');
             Route::post('admin','AdminController@store')->name('admin.store');
-        
+           
         
         } );
         

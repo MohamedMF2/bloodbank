@@ -4,7 +4,8 @@ return [
     'post' => 'مقال',
     'governorates'=>'المحافظات',
     'governorate'=>'محافظة',
-    'cities'=>'المدن',
+    'the cities'=>'المدن',
+    'cities'=>'مدن',
     'city'=>'مدينة',
     'categories'=>'الاقسام',
     'categorغ'=>'قسم',
@@ -122,6 +123,8 @@ return [
     'enter title'=>'ادخل عنوان المقال   ',
     'enter content'=>'ادخل محتوى المقال',
     'version'=>'نسخة  ',
-
-
+    'name' =>'الاسم',
+    'add city'=>' اضف مدينة  ',
+    'edit role'=>'تعديل الوظيفة',
+    'edit user'=>'تعديل المستخدم',
 ];

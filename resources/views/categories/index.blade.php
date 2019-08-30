@@ -41,13 +41,13 @@
                          <td> {{ $loop->iteration}} </td>
                       <td  class="text-center">  <a href="{{ url(route('category.show',$category->id)) }}">{{ $category->name }} </a></td>
                          <td  class="text-center"> 
-                           <a href="{{ url(route('category.edit',$category->id)) }}" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> </a>
+                           <a href="{{ url(route('category.edit',$category->id)) }}" class="btn btn-lg btn-success"><i class="fa fa-edit"></i> </a>
                          </td>
                          <td  class="text-center">
                             <form action="{{action('CategoryController@destroy',$category->id)}}" method="post">
                               @method('DELETE')
                               @csrf
-                              <button type="submit" class="btn btn-sm btn-danger"><i class=" fa fa-trash-o"></i></button>
+                              <button type="submit" class="btn btn-lg btn-danger"><i class=" fa fa-trash-o"></i></button>
                             </form>
                           </td>
 
@@ -59,7 +59,7 @@
 
             @else
                 <div class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">nodata</h4>
+                    <h4 class="alert-heading">@lang('lang.no data')</h4>
                 </div>
             @endif
         </div>

@@ -88,7 +88,7 @@
             </div>
             @endforeach
 
-              <button type="submit" class="btn btn-primary" > Save </button>
+              <button type="submit" class="btn btn-primary" > @lang('lang.save') </button>
 
             @csrf
           </form>

@@ -17,10 +17,13 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $posts=Post::where(function ($query) use ($request){
+
             if($request->has('search')){
+
                 $query->whereHas('category',function ($category) use($request){
                     $category->where('name','like','%'.$request->search.'%');
                 });
+                
                 $query->orWhere(function ($query) use($request){
                     $query->where('title','like','%'.$request->search.'%')
                           ->orWhere('content','like','%'.$request->search.'%');

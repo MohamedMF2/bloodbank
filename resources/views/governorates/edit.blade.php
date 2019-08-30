@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('page_title',' Edit '. $governorate->name.' Governorate')
+@section('page_title', __('lang.edit').'  '. $governorate->name)
                  
 @section('content')     
   <!-- Main content -->
@@ -25,14 +25,14 @@
           <form action="{{ action('GovernorateController@update',$governorate->id) }}" method="post" autocomplete="off">        
             @method('PUT')
               <div class="form-group">
-                <label for="my-input">Name</label>
+                <label for="my-input">@lang('lang.name')</label>
               <input id="my-input" class="form-control" type="text" name="name" value="{{$governorate->name}}">
                 <span class=" text-danger"> {{ $errors->first('name') }}</span>
 
               </div>
                                    
 
-              <button type="submit" class="btn btn-primary" > Save </button>
+              <button type="submit" class="btn btn-primary" > @lang('lang.save')  </button>
 
             @csrf
           </form>

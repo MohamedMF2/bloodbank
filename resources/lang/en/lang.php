@@ -123,6 +123,10 @@ return [
     'enter title'=>'enter title   ',
     'enter content'=>'enter content',
     'version'=>'version  ',
+    'name' =>'Name',
+    'add city'=>' add city  ',
+    'edit role'=>'edit role',
+    'edit user'=>'edit user',
 
 
 ];

@@ -9,7 +9,6 @@
      <div class="form-group">
         <input type="search" name="search" placeholder="@lang('lang.Search Posts by Title , Content or Category').." value="{{request()->input('search')}}" class="form-control" > 
         <span class="text-danger"> {{ $errors->first('search')}}</span>
-
      </div>
      @csrf
    </form>
@@ -49,13 +48,13 @@
                          <td  class="text-center"> <a href="{{url(route('post.show',$post->id))}}"> {{ $post->title }} </a>  </td>
 
                          <td  class="text-center"> 
-                           <a href="{{ url(route('post.edit',$post->id)) }}" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> </a>
+                           <a href="{{ url(route('post.edit',$post->id)) }}" class="btn btn-lg btn-success"><i class="fa fa-edit"></i> </a>
                          </td>
                          <td  class="text-center">
                             <form action="{{action('PostController@destroy',$post->id)}}" method="post">
                               @method('DELETE')
                               @csrf
-                              <button type="submit" class="btn btn-sm btn-danger delete" onclick="confirm()" ><i class=" fa fa-trash-o"></i></button>
+                              <button type="submit" class="btn btn-lg btn-danger delete" onclick="confirm()" ><i class=" fa fa-trash-o"></i></button>
                             
                             </form>
                             
